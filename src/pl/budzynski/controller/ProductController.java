@@ -6,22 +6,38 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Class controller for product.
+ *
+ */
 public class ProductController {
     List<Product> products= new ArrayList<Product>();
-
-    public ProductController() {
-    }
-
+    /**
+     * Adds input discount data.
+     * @return Nothing.
+     */
     public void addBaseData() {
         addProduct(new Product("A",1500));
         addProduct(new Product("B",500));
     }
-
+    /**
+     * Adds a product to the list.
+     * Calls a validating method.
+     * @param product Added product.
+     * @return Nothing.
+     */
     public void addProduct(Product product) {
         if(validate(product))
             products.add(product);
     }
+    /**
+     * Validating method.
+     * Rounds the value to one grosz up.
+     * Check if there are 5 products already. If there ate the product will not be added.
+     * Check if product prise is greater than 0. If not the product will not be added.
+     * @param product Added product.
+     * @return Nothing.
+     */
     private boolean validate(Product product){
 
         BigDecimal bd = new BigDecimal(product.getPrice()).setScale(2, RoundingMode.UP);
@@ -36,10 +52,10 @@ public class ProductController {
 
         return false;
     }
-
-    public Product getProduct(int i){
-        return products.get(i);
-    }
+    /**
+     * Getter.
+     * @return Products list.
+     */
     public List<Product> getProducts(){
         return products;
     }
