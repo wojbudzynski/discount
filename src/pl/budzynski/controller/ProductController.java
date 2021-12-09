@@ -36,7 +36,7 @@ public class ProductController {
      * Check if there are 5 products already. If there ate the product will not be added.
      * Check if product prise is greater than 0. If not the product will not be added.
      * @param product Added product.
-     * @return Nothing.
+     * @return boolean is data right.
      */
     private boolean validate(Product product){
 

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * View class.
- * Stores products with its discounts as strings.
+ * Stores products with its discounts as String.
  *
  */
 public class DiscountsView {
@@ -21,6 +21,8 @@ public class DiscountsView {
     }
     /**
      * Converts the data to the right format and adds it to the list.
+     * @param product Current product.
+     * @param productDiscount Discount for product.
      * @return Nothing.
      */
     public void addProduct(Product product, double productDiscount) {

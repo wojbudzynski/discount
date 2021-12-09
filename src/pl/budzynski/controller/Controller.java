@@ -36,7 +36,7 @@ public class Controller {
      */
     public void count(){
         double sum=0;
-        double currentsum=0;
+        double currentSum=0;
         for(Product p: productController.getProducts())
         {
             sum=sum+p.getPrice();
@@ -44,10 +44,10 @@ public class Controller {
         int i=0;
         for(Product p:productController.getProducts()) {
             if(++i==productController.getProducts().size())
-                view.addProduct(p,discountController.getDiscount()-currentsum);
+                view.addProduct(p,discountController.getDiscount()-currentSum);
             else {
                 double productDiscount=countProductDiscount(p,sum);
-                currentsum+=productDiscount;
+                currentSum+=productDiscount;
                 view.addProduct(p, productDiscount);
             }
         }

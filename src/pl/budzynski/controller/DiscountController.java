@@ -29,7 +29,7 @@ public class DiscountController {
      * Validating method.
      * Check if discount value is greater than 0. If not it is set as 0.
      * @param value Discount value.
-     * @return Nothing.
+     * @return boolean is data right.
      */
     private boolean validate(double value) {
         if (value<0)
